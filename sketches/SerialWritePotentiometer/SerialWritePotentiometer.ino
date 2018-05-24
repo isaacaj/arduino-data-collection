@@ -10,7 +10,7 @@ void setup()
 void loop()
 {
   potval = analogRead(potpin);
-  Serial.println(potval + ": " + time);
+  Serial.println(String(potval) + ": " + String(time));
   time += 1;
   delay(1000);
   Serial.flush();
