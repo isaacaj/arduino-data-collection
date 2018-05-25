@@ -1,4 +1,5 @@
 import serial
+import re
 from collecting import dev_info
 
 try:
@@ -14,13 +15,8 @@ def collect_raw_data(list_length):
     raw_data = []
     while len(raw_data) < list_length:
         # info is the first line with values
-        info = str(arduino.readline(), 'utf-8')
+        info = re.sub('[\n\r]', '', str(arduino.readline(), 'utf-8'))
 
         raw_data.append(info)
         print(info)
     return raw_data
-
-
-def scrub_data(data_list):
-
-    return data_list
