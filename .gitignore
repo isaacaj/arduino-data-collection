@@ -106,3 +106,7 @@ venv.bak/
 # idea
 .idea
 .idea/*
+
+# "living" files
+data.csv
+visualizing/visuals/*
